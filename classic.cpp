@@ -17,6 +17,20 @@ Classic::Classic() : Cd() {
     maintheme = nullptr;
 }
 
+Classic & Classic::operator=(const Classic & c) {
+    if (this == &c) {
+        return *this;
+    }
+    Cd::operator=(c);
+    delete maintheme;
+    maintheme = new char[std::strlen(c.maintheme) + 1];
+    std::strcpy(maintheme, c.maintheme);
+    return *this;
+}
+
+Classic::~Classic() {
+    delete [] maintheme;
+}
 
 
 void Classic::Report() const {
