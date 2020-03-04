@@ -35,7 +35,7 @@ std::ostream & operator<<(std::ostream & os, const baseDMA & rs) {
     return os;
 }
 
-// Методы lacksDMA
+// Методы lacksDMA-----------------------------------------------------------------------
 lacksDMA::lacksDMA(const char * c, const char * l, int r) 
     : baseDMA(l, r) {
     std::strncpy(color, c, 39);
@@ -54,7 +54,7 @@ std::ostream & operator<<(std::ostream & os, const lacksDMA & ls) {
     return os;
 }
 
-// Методы hasDMA
+// Методы hasDMA-------------------------------------------------------------------------
 hasDMA::hasDMA(const char * s, const char * l, int r)
     :baseDMA(l, r) {
     style = new char[std::strlen(s) + 1];

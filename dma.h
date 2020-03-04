@@ -3,6 +3,20 @@
 #define DMA_H_
 #include <iostream>
 
+// Абстрактный базовый класс
+class DMA {
+private:
+    char * label;
+    int rating;
+public:
+    DMA(const char * l = "null", int r = 0);
+    DMA(const DMA & d);
+    virtual ~DMA();
+    DMA & operator=(const DMA & d);
+    friend std::ostream & operator=(std::ostream & os, const DMA & d);
+};
+
+
 // Базовый класс, использующий динамическое выделение памяти
 class baseDMA {
 private:
@@ -29,7 +43,6 @@ public:
     lacksDMA(const char * c, const baseDMA & rs);
     friend std::ostream & operator<<(std::ostream & os, const lacksDMA & rs);
 };
-
 
 
 // Производный класс с динамическим выделением памяти
